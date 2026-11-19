@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:gov="http://gov.semantic.in/ontology#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/AadhaarAddressUpdate">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IdentityService"/>
+    <gov:serviceName>Aadhaar Address Update</gov:serviceName>
+    <gov:serviceCode>UIDAI-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/UIDAI"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Identity"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/ResidentialAddress"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/AadhaarNewEnrollment"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/AadhaarMobileLink"/>
+    <gov:hasDescription>Update or correct your permanent and present residential address in your Aadhaar profile with supporting documentary evidence.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Sign in to myaadhaar.uidai.gov.in using Aadhaar &amp; OTP -&gt; 2. Select 'Update Address in Aadhaar Online' -&gt; 3. Enter new address details -&gt; 4. Upload valid supporting POA document -&gt; 5. Pay Rs 50 -&gt; 6. Track via Service Request Number (SRN).</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://myaadhaar.uidai.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>5 to 10 Business Days</gov:processingTime>
+    <gov:serviceFee>Rs 50 (Online Portal)</gov:serviceFee>
+    <gov:hasSynonym>change house location in aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>change address in aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>update aadhaar location</gov:hasSynonym>
+    <gov:hasSynonym>aadhaar address correction</gov:hasSynonym>
+    <gov:hasSynonym>modify home address aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>shift home aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>new address in aadhar</gov:hasSynonym>
+    <gov:hasSynonym>aadhaar me pata badalna</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/ResidentialAddress">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Residential Address Concept</rdfs:label>
+    <gov:hasSynonym>house location</gov:hasSynonym>
+    <gov:hasSynonym>home location</gov:hasSynonym>
+    <gov:hasSynonym>residential location</gov:hasSynonym>
+    <gov:hasSynonym>residence</gov:hasSynonym>
+    <gov:hasSynonym>house address</gov:hasSynonym>
+    <gov:hasSynonym>living place</gov:hasSynonym>
+    <gov:hasSynonym>home address</gov:hasSynonym>
+    <gov:hasSynonym>flat address</gov:hasSynonym>
+    <gov:hasSynonym>shifting house</gov:hasSynonym>
+    <gov:hasSynonym>relocation</gov:hasSynonym>
+    <gov:hasSynonym>moved to new city</gov:hasSynonym>
+    <gov:hasSynonym>pata badalna</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/DrivingLicenceRenewal">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TransportService"/>
+    <gov:serviceName>Driving Licence Renewal</gov:serviceName>
+    <gov:serviceCode>MORTH-SRV-003</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Transport"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Transport"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/DrivingLicence"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/DrivingLicencePermanent"/>
+    <gov:hasDescription>Extension of driving licence validity period upon expiry of 20-year term or attainment of age 40.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Visit Sarathi Portal -&gt; 2. Select 'Services on DL' -&gt; 3. Input DL Number and DOB -&gt; 4. Select Renewal -&gt; 5. Upload medical certificate Form 1-A if applicant age &gt; 40 -&gt; 6. Pay fee online -&gt; 7. Endorsement approved.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://sarathi.parivahan.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>5 to 10 Business Days</gov:processingTime>
+    <gov:serviceFee>Rs 400</gov:serviceFee>
+    <gov:hasSynonym>where can i renew my driving licence</gov:hasSynonym>
+    <gov:hasSynonym>renew my driving license</gov:hasSynonym>
+    <gov:hasSynonym>expired dl renewal</gov:hasSynonym>
+    <gov:hasSynonym>extend driving licence</gov:hasSynonym>
+    <gov:hasSynonym>parivahan dl renewal</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#ministryName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Electoral">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Civic &amp; Electoral Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#Citizen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Citizen</rdfs:label>
+    <rdfs:comment>Beneficiary of government public services.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/HospitalDischarge">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Institutional Birth Discharge Proof</rdfs:label>
+    <gov:hasDescription>Official discharge summary and birth report slip issued by hospital medical superintendent.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/PassportFreshApplication">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TravelService"/>
+    <gov:serviceName>Passport Fresh Issuance</gov:serviceName>
+    <gov:serviceCode>MEA-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/PassportSeva"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Travel"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfDOB"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IdentityCard"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/PassportRenewalReissue"/>
+    <gov:hasDescription>Official government credential granting permission for international border crossing and travel to sovereign states.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Register on Passport Seva Portal -&gt; 2. Complete online application -&gt; 3. Pay fee and book PSK appointment -&gt; 4. Present original documents &amp; biometrics at PSK -&gt; 5. Local police physical verification -&gt; 6. Dispatched via Speed Post.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://www.passportindia.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>7 to 21 Days (Normal) / 3 Days (Tatkaal)</gov:processingTime>
+    <gov:serviceFee>Rs 1,500 (36 pages) / Rs 2,000 (60 pages)</gov:serviceFee>
+    <gov:hasSynonym>apply for new passport</gov:hasSynonym>
+    <gov:hasSynonym>get indian passport</gov:hasSynonym>
+    <gov:hasSynonym>fresh passport application</gov:hasSynonym>
+    <gov:hasSynonym>international travel card</gov:hasSynonym>
+    <gov:hasSynonym>passport apply</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/PANCardCorrection">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#FinancialService"/>
+    <gov:serviceName>PAN Card Correction and Reprint</gov:serviceName>
+    <gov:serviceCode>CBDT-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/IncomeTax"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Finance"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfIdentity"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/TaxIdentification"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/PANCardNewApplication"/>
+    <gov:hasDescription>Correction of misspelled names, father's name, birth dates, or reprinting lost/damaged PAN cards.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Open NSDL Changes / Correction application -&gt; 2. Enter 10-digit PAN -&gt; 3. Tick checkboxes for attributes to rectify -&gt; 4. Upload documentary justification -&gt; 5. e-Sign using Aadhaar OTP.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://www.onlineservices.nsdl.com</gov:officialPortalUrl>
+    <gov:processingTime>7 to 14 Business Days</gov:processingTime>
+    <gov:serviceFee>Rs 107</gov:serviceFee>
+    <gov:hasSynonym>lost pan card reprint</gov:hasSynonym>
+    <gov:hasSynonym>change name in pan card</gov:hasSynonym>
+    <gov:hasSynonym>correct date of birth in pan</gov:hasSynonym>
+    <gov:hasSynonym>damaged pan replacement</gov:hasSynonym>
+    <gov:hasSynonym>pan card duplicate</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/BirthCertificateRegistration">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IdentityService"/>
+    <gov:serviceName>Birth Certificate Registration</gov:serviceName>
+    <gov:serviceCode>CRS-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/CRS"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Vital"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/HospitalDischarge"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IdentityCard"/>
+    <gov:hasDescription>Statutory legal registration of child birth under Registration of Births and Deaths Act establishing legal existence.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Hospital reports birth event to registrar or parent applies on crsorgi.gov.in -&gt; 2. Verify parental identity -&gt; 3. Municipal Registrar approves -&gt; 4. Digitally verifiable QR code certificate generated.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://crsorgi.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>7 to 14 Days</gov:processingTime>
+    <gov:serviceFee>Free within 21 days (Late fee applicable thereafter)</gov:serviceFee>
+    <gov:hasSynonym>apply birth certificate</gov:hasSynonym>
+    <gov:hasSynonym>janam praman patra</gov:hasSynonym>
+    <gov:hasSynonym>register new child birth</gov:hasSynonym>
+    <gov:hasSynonym>download municipal birth certificate</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#DateOfBirthDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Proof of Date of Birth (PDB)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/VoterIDNewRegistration">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#WelfareService"/>
+    <gov:serviceName>Voter ID New Registration (Form 6)</gov:serviceName>
+    <gov:serviceCode>ECI-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/ECI"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Electoral"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfDOB"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/ElectoralRegistration"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/VoterIDAddressCorrection"/>
+    <gov:hasDescription>Enrollment of first-time Indian citizens reaching age 18 into the statutory electoral roll with an Electronic Photo Identity Card (EPIC).</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Access voters.eci.gov.in -&gt; 2. Fill Form 6 -&gt; 3. Upload passport photo, age proof, and address proof -&gt; 4. Booth Level Officer (BLO) performs field verification -&gt; 5. Download e-EPIC and receive physical card.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://voters.eci.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>15 to 30 Business Days</gov:processingTime>
+    <gov:serviceFee>Free of Cost</gov:serviceFee>
+    <gov:hasSynonym>apply for new voter id</gov:hasSynonym>
+    <gov:hasSynonym>form 6 online</gov:hasSynonym>
+    <gov:hasSynonym>first time voter registration</gov:hasSynonym>
+    <gov:hasSynonym>get election card</gov:hasSynonym>
+    <gov:hasSynonym>epic card apply</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/PDS">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Department of Food &amp; Public Distribution (PDS / NFSA)</gov:departmentName>
+    <gov:ministryName>Ministry of Consumer Affairs, Food &amp; Public Distribution</gov:ministryName>
+    <gov:hasDescription>Administers National Food Security Act (NFSA), Targeted Public Distribution System, and Ration Cards.</gov:hasDescription>
+    <gov:officialPortalUrl>https://nfsa.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/AadhaarMobileLink">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IdentityService"/>
+    <gov:serviceName>Aadhaar Mobile &amp; Email Update</gov:serviceName>
+    <gov:serviceCode>UIDAI-SRV-003</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/UIDAI"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Identity"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IdentityCard"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/AadhaarAddressUpdate"/>
+    <gov:hasDescription>Link or update your valid mobile number and email ID in Aadhaar records to enable OTP-based authentication for digital services.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Visit any Aadhaar Seva Kendra or post office CEPT center -&gt; 2. Biometric fingerprint verification -&gt; 3. Operator enters new phone number -&gt; 4. Verify with instant SMS OTP -&gt; 5. Fee Rs 50.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://uidai.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>24 to 72 Hours</gov:processingTime>
+    <gov:serviceFee>Rs 50</gov:serviceFee>
+    <gov:hasSynonym>link phone number to aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>change mobile number in aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>aadhaar otp phone change</gov:hasSynonym>
+    <gov:hasSynonym>update email in aadhaar</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/ProofOfDOB">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#DateOfBirthDocument"/>
+    <rdfs:label>Proof of Date of Birth (PDB)</rdfs:label>
+    <gov:hasDescription>Birth Certificate, 10th Standard Marks Sheet, Passport, or PAN Card.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/DrivingLicencePermanent">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TransportService"/>
+    <gov:serviceName>Permanent Driving Licence (DL)</gov:serviceName>
+    <gov:serviceCode>MORTH-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Transport"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Transport"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/DrivingLicence"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/DrivingLicenceLearner"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/DrivingLicenceRenewal"/>
+    <gov:hasDescription>Full legal authorization smart card granting permission to drive motor vehicles across India.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Visit sarathi.parivahan.gov.in after 30 days of holding valid LL -&gt; 2. Enter LL number -&gt; 3. Book practical driving track test slot -&gt; 4. Clear physical driving test before Motor Vehicle Inspector -&gt; 5. Card delivered.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://sarathi.parivahan.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>7 to 15 Days after test</gov:processingTime>
+    <gov:serviceFee>Rs 200 + Rs 200 Smart Card Fee</gov:serviceFee>
+    <gov:hasSynonym>permanent driving licence</gov:hasSynonym>
+    <gov:hasSynonym>driving test slot</gov:hasSynonym>
+    <gov:hasSynonym>convert learner to dl</gov:hasSynonym>
+    <gov:hasSynonym>apply dl</gov:hasSynonym>
+    <gov:hasSynonym>four wheeler licence</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#SemanticConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Semantic Concept</rdfs:label>
+    <rdfs:comment>Vocabulary concept or intent anchor utilized in semantic query reasoning.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Revenue">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Certificate &amp; Revenue Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#processingTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/ElectoralRegistration">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Voter Registry Concept</rdfs:label>
+    <gov:hasSynonym>voter id</gov:hasSynonym>
+    <gov:hasSynonym>voting card</gov:hasSynonym>
+    <gov:hasSynonym>epic card</gov:hasSynonym>
+    <gov:hasSynonym>election card</gov:hasSynonym>
+    <gov:hasSynonym>vote register</gov:hasSynonym>
+    <gov:hasSynonym>matdata pehchan patra</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/ECI">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Election Commission of India (ECI)</gov:departmentName>
+    <gov:ministryName>Autonomous Constitutional Authority</gov:ministryName>
+    <gov:hasDescription>Autonomous constitutional authority administering electoral rolls and Voter ID (EPIC) registrations.</gov:hasDescription>
+    <gov:officialPortalUrl>https://voters.eci.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/AadhaarNewEnrollment">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IdentityService"/>
+    <gov:serviceName>Aadhaar New Enrollment</gov:serviceName>
+    <gov:serviceCode>UIDAI-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/UIDAI"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Identity"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfIdentity"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfDOB"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IdentityCard"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/AadhaarAddressUpdate"/>
+    <gov:hasDescription>Fresh enrollment for Indian residents to receive their 12-digit unique biographical and biometric identity.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Book appointment at nearest Aadhaar Seva Kendra -&gt; 2. Fill Enrolment Form -&gt; 3. Submit biometric scans (iris, 10 fingerprints, photograph) -&gt; 4. Collect acknowledgement slip with 28-digit Enrolment ID (EID).</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://appointments.uidai.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>15 to 30 Days</gov:processingTime>
+    <gov:serviceFee>Free (Government Subsidized)</gov:serviceFee>
+    <gov:hasSynonym>apply for aadhaar card</gov:hasSynonym>
+    <gov:hasSynonym>new aadhaar registration</gov:hasSynonym>
+    <gov:hasSynonym>first time aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>enroll for aadhaar</gov:hasSynonym>
+    <gov:hasSynonym>aadhaar apply</gov:hasSynonym>
+    <gov:hasSynonym>get aadhaar</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">National Government Service Portal Knowledge Ontology</rdfs:label>
+    <rdfs:comment xml:lang="en">Formal Web Ontology Language (OWL) knowledge base modeling public government services, departments, citizen eligibility, required documents, and semantic relationships.</rdfs:comment>
+    <owl:versionInfo>2.0.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/PassportRenewalReissue">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TravelService"/>
+    <gov:serviceName>Passport Renewal and Re-issue</gov:serviceName>
+    <gov:serviceCode>MEA-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/PassportSeva"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Travel"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IdentityCard"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/PassportFreshApplication"/>
+    <gov:hasDescription>Re-issue of Indian passport due to validity expiration, exhaustion of visa stamp pages, or change in personal particulars.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Sign in to Passport Seva Portal -&gt; 2. Apply for 'Re-issue of Passport' -&gt; 3. Enter old passport number and expiry -&gt; 4. Schedule appointment at nearest PSK -&gt; 5. Submit old booklet for cancellation.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://www.passportindia.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>7 to 14 Business Days</gov:processingTime>
+    <gov:serviceFee>Rs 1,500</gov:serviceFee>
+    <gov:hasSynonym>renew passport</gov:hasSynonym>
+    <gov:hasSynonym>expired passport renewal</gov:hasSynonym>
+    <gov:hasSynonym>passport re-issue</gov:hasSynonym>
+    <gov:hasSynonym>passport booklet extension</gov:hasSynonym>
+    <gov:hasSynonym>passport pages over</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/RationCardApplication">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#WelfareService"/>
+    <gov:serviceName>Ration Card Application (NFSA)</gov:serviceName>
+    <gov:serviceCode>PDS-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/PDS"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Welfare"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/IncomeProof"/>
+    <gov:hasDescription>Public food security card entitling beneficiary families to subsidized food grains and civil supplies under NFSA.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Visit state food &amp; civil supplies portal -&gt; 2. Apply for new Ration Card -&gt; 3. Provide Aadhaar IDs of all family members -&gt; 4. Submit income certificate -&gt; 5. Food Inspector inspects premises -&gt; 6. Card sanctioned.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://nfsa.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>20 to 30 Business Days</gov:processingTime>
+    <gov:serviceFee>Rs 20 to Rs 50</gov:serviceFee>
+    <gov:hasSynonym>apply for ration card</gov:hasSynonym>
+    <gov:hasSynonym>bpl card apply</gov:hasSynonym>
+    <gov:hasSynonym>food security card</gov:hasSynonym>
+    <gov:hasSynonym>new rashan card</gov:hasSynonym>
+    <gov:hasSynonym>pds card online</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/DrivingLicenceLearner">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TransportService"/>
+    <gov:serviceName>Learner's Licence (LL) Application</gov:serviceName>
+    <gov:serviceCode>MORTH-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Transport"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Transport"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfDOB"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/DrivingLicence"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/DrivingLicencePermanent"/>
+    <gov:hasDescription>Provisional permit enabling citizens to learn motor vehicle driving on Indian roads under instructor supervision.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Go to sarathi.parivahan.gov.in -&gt; 2. Select state -&gt; 3. Apply for Learner Licence -&gt; 4. Authenticate with Aadhaar -&gt; 5. Take online traffic signal test -&gt; 6. Download instant computer-generated LL.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://sarathi.parivahan.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>Instant (Online Aadhaar Test)</gov:processingTime>
+    <gov:serviceFee>Rs 200</gov:serviceFee>
+    <gov:hasSynonym>apply learner licence</gov:hasSynonym>
+    <gov:hasSynonym>learning licence online</gov:hasSynonym>
+    <gov:hasSynonym>parivahan learner test</gov:hasSynonym>
+    <gov:hasSynonym>first driving licence</gov:hasSynonym>
+    <gov:hasSynonym>two wheeler learner license</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#RevenueService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>Revenue &amp; Certificate Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#GovernmentDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentEntity"/>
+    <rdfs:label>Government Department / Ministry</rdfs:label>
+    <rdfs:comment>Administrative public authority or agency providing citizen public services.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/IncomeCertificate">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#RevenueService"/>
+    <gov:serviceName>Income Certificate (e-District)</gov:serviceName>
+    <gov:serviceCode>REV-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Revenue"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Revenue"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/IncomeProof"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/IncomeVerification"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/CommunityCasteCertificate"/>
+    <gov:hasDescription>Statutory revenue certificate certifying total annual family income from all legitimate sources for scholarships and reservations.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Visit state e-District portal -&gt; 2. Choose 'Revenue Services' -&gt; 'Income Certificate' -&gt; 3. Declare family income sources -&gt; 4. Upload salary slip or income affidavit -&gt; 5. Verification by VAO and Tehsildar -&gt; 6. Download digitally signed PDF.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://edistrict.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>7 to 15 Days</gov:processingTime>
+    <gov:serviceFee>Rs 30 to Rs 60</gov:serviceFee>
+    <gov:hasSynonym>how to get income certificate</gov:hasSynonym>
+    <gov:hasSynonym>apply aay praman patra</gov:hasSynonym>
+    <gov:hasSynonym>revenue income proof</gov:hasSynonym>
+    <gov:hasSynonym>annual income certificate</gov:hasSynonym>
+    <gov:hasSynonym>tahsildar income cert</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/CRS">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Civil Registration System (Office of the Registrar General of India)</gov:departmentName>
+    <gov:ministryName>Ministry of Home Affairs</gov:ministryName>
+    <gov:hasDescription>National civil registry administering statutory birth and death registrations.</gov:hasDescription>
+    <gov:officialPortalUrl>https://crsorgi.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/IncomeProof">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IncomeDocument"/>
+    <rdfs:label>Income Proof Document</rdfs:label>
+    <gov:hasDescription>Salary Slip, Income Tax Return (ITR), Form 16, or Self-Declaration Affidavit.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/IdentityCard">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Identity Credential Concept</rdfs:label>
+    <gov:hasSynonym>identity card</gov:hasSynonym>
+    <gov:hasSynonym>id card</gov:hasSynonym>
+    <gov:hasSynonym>id proof</gov:hasSynonym>
+    <gov:hasSynonym>identity proof</gov:hasSynonym>
+    <gov:hasSynonym>pehechan patra</gov:hasSynonym>
+    <gov:hasSynonym>id document</gov:hasSynonym>
+    <gov:hasSynonym>lost id</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#FinancialService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>Tax &amp; Financial Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/UIDAI">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Unique Identification Authority of India (UIDAI)</gov:departmentName>
+    <gov:ministryName>Ministry of Electronics and Information Technology (MeitY)</gov:ministryName>
+    <gov:hasDescription>Statutory authority established under the Aadhaar Act 2016 for issuing unique identification numbers to residents.</gov:hasDescription>
+    <gov:officialPortalUrl>https://uidai.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#IdentityDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Proof of Identity (POI)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#WelfareService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>Welfare &amp; Civic Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#hasApplicationProcedure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/TaxIdentification">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Tax Identifier Concept</rdfs:label>
+    <gov:hasSynonym>pan</gov:hasSynonym>
+    <gov:hasSynonym>pan card</gov:hasSynonym>
+    <gov:hasSynonym>tax id</gov:hasSynonym>
+    <gov:hasSynonym>form 49a</gov:hasSynonym>
+    <gov:hasSynonym>income tax number</gov:hasSynonym>
+    <gov:hasSynonym>permanent account number</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#IdentityService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>Identity &amp; Civil Registration Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/CommunityCasteCertificate">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#RevenueService"/>
+    <gov:serviceName>Community and Caste Certificate</gov:serviceName>
+    <gov:serviceCode>REV-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Revenue"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Revenue"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/CasteProof"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/CasteClassification"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/IncomeCertificate"/>
+    <gov:hasDescription>Official statutory certification of citizen's belonging to Scheduled Caste (SC), Scheduled Tribe (ST), OBC, or EWS category.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Log into e-District portal -&gt; 2. Select Caste/Community Certificate -&gt; 3. Provide paternal lineage community records -&gt; 4. Local Revenue Inspector enquiry -&gt; 5. Sub-Divisional Magistrate / Tehsildar signs credential.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://edistrict.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>15 to 30 Days</gov:processingTime>
+    <gov:serviceFee>Rs 50</gov:serviceFee>
+    <gov:hasSynonym>how can i apply for a caste certificate</gov:hasSynonym>
+    <gov:hasSynonym>community certificate apply</gov:hasSynonym>
+    <gov:hasSynonym>obc certificate</gov:hasSynonym>
+    <gov:hasSynonym>sc st certificate online</gov:hasSynonym>
+    <gov:hasSynonym>jaati praman patra</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/VehicleRegistrationTransfer">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#TransportService"/>
+    <gov:serviceName>Vehicle Registration Transfer (RC Transfer)</gov:serviceName>
+    <gov:serviceCode>MORTH-SRV-004</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/Transport"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Transport"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/VehicleDocuments"/>
+    <gov:hasDescription>Transfer of vehicular ownership upon sale, purchase, or inheritance of two-wheelers and four-wheelers.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Log in to vahan.parivahan.gov.in -&gt; 2. Enter vehicle registration number -&gt; 3. Select 'Transfer of Ownership' -&gt; 4. Buyer and seller Aadhaar OTP consent -&gt; 5. Submit physical signed Form 29/30 to jurisdictional RTO.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://vahan.parivahan.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>15 to 30 Days</gov:processingTime>
+    <gov:serviceFee>Rs 300 to Rs 500 depending on vehicle class</gov:serviceFee>
+    <gov:hasSynonym>transfer rc of bike</gov:hasSynonym>
+    <gov:hasSynonym>car rc ownership change</gov:hasSynonym>
+    <gov:hasSynonym>sell vehicle rc transfer</gov:hasSynonym>
+    <gov:hasSynonym>vahan rc name transfer</gov:hasSynonym>
+    <gov:hasSynonym>used car registration transfer</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#AddressDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Proof of Address (POA)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/DrivingLicence">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Driving Licence Concept</rdfs:label>
+    <gov:hasSynonym>driving licence</gov:hasSynonym>
+    <gov:hasSynonym>driver license</gov:hasSynonym>
+    <gov:hasSynonym>driving permit</gov:hasSynonym>
+    <gov:hasSynonym>rto licence</gov:hasSynonym>
+    <gov:hasSynonym>gaadi chalana licence</gov:hasSynonym>
+    <gov:hasSynonym>motor vehicle permit</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#IncomeDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Proof of Income</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#RequiredDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Required Supporting Document</rdfs:label>
+    <rdfs:comment>Documentary evidence mandatory for statutory service completion.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#requiresDocument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>requires document</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Travel">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Travel &amp; Passport Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Vital">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Vital Civil Registration</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#providesService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <owl:inverseOf rdf:resource="http://gov.semantic.in/ontology#belongsToDepartment"/>
+    <rdfs:label>provides service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/Transport">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Ministry of Road Transport and Highways (MoRTH / Parivahan)</gov:departmentName>
+    <gov:ministryName>Ministry of Road Transport and Highways</gov:ministryName>
+    <gov:hasDescription>Apex body governing national vehicular administration, Driving Licences (Sarathi), and Vehicle Registrations (Vahan).</gov:hasDescription>
+    <gov:officialPortalUrl>https://parivahan.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#serviceName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#associatedWithConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>associated with semantic concept</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#ServiceCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Service Domain Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/VoterIDAddressCorrection">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#WelfareService"/>
+    <gov:serviceName>Voter ID Address Change and Shifting (Form 8)</gov:serviceName>
+    <gov:serviceCode>ECI-SRV-002</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/ECI"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Electoral"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/ResidentialAddress"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/ElectoralRegistration"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/VoterIDNewRegistration"/>
+    <gov:hasDescription>Shifting of constituency or residence address in electoral records and correction of biographical particulars in Voter ID.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Open voters.eci.gov.in -&gt; 2. Select Form 8 -&gt; 3. Enter current EPIC number -&gt; 4. Select 'Shifting of Residence' -&gt; 5. Enter new constituency and house address -&gt; 6. Submit proof -&gt; 7. BLO verification.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://voters.eci.gov.in</gov:officialPortalUrl>
+    <gov:processingTime>14 to 28 Days</gov:processingTime>
+    <gov:serviceFee>Free of Cost</gov:serviceFee>
+    <gov:hasSynonym>change address in voter card</gov:hasSynonym>
+    <gov:hasSynonym>shift voter id constituency</gov:hasSynonym>
+    <gov:hasSynonym>form 8 online</gov:hasSynonym>
+    <gov:hasSynonym>update residence in epic</gov:hasSynonym>
+    <gov:hasSynonym>voter card correction</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#GovernmentService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Government Service</rdfs:label>
+    <rdfs:comment>Public administrative service offered to citizens or organizations.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/service/PANCardNewApplication">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#FinancialService"/>
+    <gov:serviceName>PAN Card New Application (Form 49A)</gov:serviceName>
+    <gov:serviceCode>CBDT-SRV-001</gov:serviceCode>
+    <gov:belongsToDepartment rdf:resource="http://gov.semantic.in/department/IncomeTax"/>
+    <gov:hasCategory rdf:resource="http://gov.semantic.in/category/Finance"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfIdentity"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfAddress"/>
+    <gov:requiresDocument rdf:resource="http://gov.semantic.in/document/ProofOfDOB"/>
+    <gov:associatedWithConcept rdf:resource="http://gov.semantic.in/concept/TaxIdentification"/>
+    <gov:relatedTo rdf:resource="http://gov.semantic.in/service/PANCardCorrection"/>
+    <gov:hasDescription>Issue of 10-digit alphanumeric Permanent Account Number (PAN) mandatory for taxable entities and financial operations in India.</gov:hasDescription>
+    <gov:hasApplicationProcedure>1. Access Protean NSDL or UTIITSL portal -&gt; 2. Select Form 49A (Indian Citizens) -&gt; 3. Input applicant details -&gt; 4. Instant paperless verification via Aadhaar e-KYC -&gt; 5. Pay fee -&gt; 6. e-PAN issued in 24 hours, physical card dispatched.</gov:hasApplicationProcedure>
+    <gov:officialPortalUrl>https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html</gov:officialPortalUrl>
+    <gov:processingTime>24 Hours (e-PAN) / 10 Days (Physical)</gov:processingTime>
+    <gov:serviceFee>Rs 72 (e-PAN) / Rs 107 (Physical Card)</gov:serviceFee>
+    <gov:hasSynonym>how do i get a pan card</gov:hasSynonym>
+    <gov:hasSynonym>apply for new pan card</gov:hasSynonym>
+    <gov:hasSynonym>form 49a online</gov:hasSynonym>
+    <gov:hasSynonym>income tax card</gov:hasSynonym>
+    <gov:hasSynonym>pan card apply</gov:hasSynonym>
+    <gov:hasSynonym>get tax id</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#hasCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>categorized under</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/CasteProof">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Paternal Caste Proof Document</rdfs:label>
+    <gov:hasDescription>Father or paternal relative's Community/Caste Certificate or School Leaving Certificate.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/PassportSeva">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Consular, Passport &amp; Visa Division (Passport Seva)</gov:departmentName>
+    <gov:ministryName>Ministry of External Affairs (MEA)</gov:ministryName>
+    <gov:hasDescription>Responsible for issuing Indian Passports, travel credentials, and consular services.</gov:hasDescription>
+    <gov:officialPortalUrl>https://passportindia.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/CasteClassification">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Community &amp; Caste Category Concept</rdfs:label>
+    <gov:hasSynonym>caste certificate</gov:hasSynonym>
+    <gov:hasSynonym>community certificate</gov:hasSynonym>
+    <gov:hasSynonym>jaati praman patra</gov:hasSynonym>
+    <gov:hasSynonym>obc certificate</gov:hasSynonym>
+    <gov:hasSynonym>sc st certificate</gov:hasSynonym>
+    <gov:hasSynonym>reservation proof</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#hasEligibility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#Eligibility"/>
+    <rdfs:label>has eligibility criteria</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/IncomeTax">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>Central Board of Direct Taxes (Income Tax Department)</gov:departmentName>
+    <gov:ministryName>Ministry of Finance</gov:ministryName>
+    <gov:hasDescription>Premier direct tax administration agency governing Permanent Account Number (PAN) issuance and tax governance.</gov:hasDescription>
+    <gov:officialPortalUrl>https://incometax.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#serviceCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/VehicleDocuments">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#RequiredDocument"/>
+    <rdfs:label>Vehicle Transfer Set (Form 29 &amp; 30)</rdfs:label>
+    <gov:hasDescription>Original RC, Form 29 &amp; 30 signed by seller and buyer, valid PUC, and Motor Insurance.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#belongsToDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <owl:inverseOf rdf:resource="http://gov.semantic.in/ontology#providesService"/>
+    <rdfs:label>belongs to department</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#serviceFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Finance">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Financial &amp; Tax Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#TransportService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>Transport &amp; Motor Vehicle Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#relatedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:label>related to service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Identity">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Identity Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#GovernmentEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Government Entity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#officialPortalUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/concept/IncomeVerification">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#SemanticConcept"/>
+    <rdfs:label>Income Status Concept</rdfs:label>
+    <gov:hasSynonym>income certificate</gov:hasSynonym>
+    <gov:hasSynonym>aay praman patra</gov:hasSynonym>
+    <gov:hasSynonym>salary certificate</gov:hasSynonym>
+    <gov:hasSynonym>low income proof</gov:hasSynonym>
+    <gov:hasSynonym>annual income proof</gov:hasSynonym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/ProofOfIdentity">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#IdentityDocument"/>
+    <rdfs:label>Proof of Identity (POI)</rdfs:label>
+    <gov:hasDescription>Aadhaar Card, Passport, Voter ID Card, PAN Card, Driving Licence, or Government Photo ID.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Transport">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Transport &amp; Vehicle Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#departmentName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/department/Revenue">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#GovernmentDepartment"/>
+    <gov:departmentName>State Department of Revenue &amp; Land Administration (e-District)</gov:departmentName>
+    <gov:ministryName>State Governments / Ministry of Home Affairs</gov:ministryName>
+    <gov:hasDescription>Responsible for issuing vital civic status certificates including Income, Caste/Community, and Domicile credentials.</gov:hasDescription>
+    <gov:officialPortalUrl>https://edistrict.gov.in</gov:officialPortalUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/document/ProofOfAddress">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#AddressDocument"/>
+    <rdfs:label>Proof of Address (POA)</rdfs:label>
+    <gov:hasDescription>Passport, Electricity Bill, Water Bill, Bank Passbook, Registered Rent Agreement, or Post Office Account.</gov:hasDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/category/Welfare">
+    <rdf:type rdf:resource="http://gov.semantic.in/ontology#ServiceCategory"/>
+    <rdfs:label>Social Welfare &amp; Subsidy Services</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#hasDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#hasSynonym">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#Eligibility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Service Eligibility Criteria</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#Application">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Citizen Service Application</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://gov.semantic.in/ontology#mapsToConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>maps to canonical concept</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

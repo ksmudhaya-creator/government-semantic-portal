@@ -1,0 +1,194 @@
+{
+  "search_logs": [
+    {
+      "query": "How can I change my house location in Aadhaar?",
+      "detected_concepts": [
+        "Residential Address & Location"
+      ],
+      "matched_service": "Aadhaar Address Update",
+      "reasoning_trace": [
+        {
+          "stepNumber": 1,
+          "title": "Lexical & Morphological Tokenization",
+          "description": "Extracted 4 significant semantic tokens: change, house, location, aadhaar.",
+          "data": {
+            "significantTokens": [
+              "change",
+              "house",
+              "location",
+              "aadhaar"
+            ],
+            "rawTokens": [
+              "how",
+              "can",
+              "i",
+              "change",
+              "my",
+              "house",
+              "location",
+              "in",
+              "aadhaar"
+            ]
+          }
+        },
+        {
+          "stepNumber": 2,
+          "title": "Ontology Concept & Synonym Resolution",
+          "description": "Identified 1 semantic concepts through Web Ontology Language (OWL) synonym mappings: 'house location' -> concept:ResidentialAddress.",
+          "data": {
+            "concepts": [
+              {
+                "conceptKey": "ResidentialAddress",
+                "label": "Residential Address & Location",
+                "matchedSynonym": "house location",
+                "canonicalUri": "concept:ResidentialAddress"
+              }
+            ]
+          }
+        },
+        {
+          "stepNumber": 3,
+          "title": "Entity & Intent Classification",
+          "description": "Detected Intent: [UPDATE], Target Authority/Entity: [Aadhaar].",
+          "data": {
+            "intents": [
+              "UPDATE"
+            ],
+            "entities": [
+              "Aadhaar"
+            ]
+          }
+        },
+        {
+          "stepNumber": 4,
+          "title": "Semantic Rule Execution (RULE_001_AADHAAR_ADDRESS_UPDATE)",
+          "description": "Evaluated Horn Clause Rule: Aadhaar Residential Address Modification Rule.\nLogic: IF (Concept == ResidentialAddress) \u2227 (Entity in [Aadhaar, UIDAI] or Text contains 'aadhaar') \u2227 (Intent == UPDATE) THEN Service = AadhaarAddressUpdate",
+          "data": {
+            "ruleId": "RULE_001_AADHAAR_ADDRESS_UPDATE",
+            "ruleName": "Aadhaar Residential Address Modification Rule",
+            "logic": "IF (Concept == ResidentialAddress) \u2227 (Entity in [Aadhaar, UIDAI] or Text contains 'aadhaar') \u2227 (Intent == UPDATE) THEN Service = AadhaarAddressUpdate"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "title": "Knowledge Graph Inference & Verification",
+          "description": "Traversed Knowledge Graph Path: Query: \"How can I change my house location in Aadhaar?\"  -->  Concept: ResidentialAddress  -->  Service: Aadhaar Address Update  -->  Department: Unique Identification Authority of India (UIDAI). Required verification: 1 supporting document(s) required.",
+          "data": {
+            "path": "Query: \"How can I change my house location in Aadhaar?\"  -->  Concept: ResidentialAddress  -->  Service: Aadhaar Address Update  -->  Department: Unique Identification Authority of India (UIDAI)",
+            "service": "Aadhaar Address Update",
+            "department": "Unique Identification Authority of India (UIDAI)",
+            "documents": [
+              {
+                "uri": "http://gov.semantic.in/document/ProofOfAddress",
+                "name": "Proof of Address (POA)",
+                "description": "Passport, Electricity Bill, Water Bill, Bank Passbook, Registered Rent Agreement, or Post Office Account."
+              }
+            ]
+          }
+        }
+      ],
+      "search_type": "semantic",
+      "success": true,
+      "timestamp": "2026-11-19T15:31:21.826003"
+    },
+    {
+      "query": "How can I change my house location in Aadhaar?",
+      "detected_concepts": [
+        "Residential Address & Location"
+      ],
+      "matched_service": "Aadhaar Address Update",
+      "reasoning_trace": [
+        {
+          "stepNumber": 1,
+          "title": "Lexical & Morphological Tokenization",
+          "description": "Extracted 4 significant semantic tokens: change, house, location, aadhaar.",
+          "data": {
+            "significantTokens": [
+              "change",
+              "house",
+              "location",
+              "aadhaar"
+            ],
+            "rawTokens": [
+              "how",
+              "can",
+              "i",
+              "change",
+              "my",
+              "house",
+              "location",
+              "in",
+              "aadhaar"
+            ]
+          }
+        },
+        {
+          "stepNumber": 2,
+          "title": "Ontology Concept & Synonym Resolution",
+          "description": "Identified 1 semantic concepts through Web Ontology Language (OWL) synonym mappings: 'house location' -> concept:ResidentialAddress.",
+          "data": {
+            "concepts": [
+              {
+                "conceptKey": "ResidentialAddress",
+                "label": "Residential Address & Location",
+                "matchedSynonym": "house location",
+                "canonicalUri": "concept:ResidentialAddress"
+              }
+            ]
+          }
+        },
+        {
+          "stepNumber": 3,
+          "title": "Entity & Intent Classification",
+          "description": "Detected Intent: [UPDATE], Target Authority/Entity: [Aadhaar].",
+          "data": {
+            "intents": [
+              "UPDATE"
+            ],
+            "entities": [
+              "Aadhaar"
+            ]
+          }
+        },
+        {
+          "stepNumber": 4,
+          "title": "Semantic Rule Execution (RULE_001_AADHAAR_ADDRESS_UPDATE)",
+          "description": "Evaluated Horn Clause Rule: Aadhaar Residential Address Modification Rule.\nLogic: IF (Concept == ResidentialAddress) \u2227 (Entity in [Aadhaar, UIDAI] or Text contains 'aadhaar') \u2227 (Intent == UPDATE) THEN Service = AadhaarAddressUpdate",
+          "data": {
+            "ruleId": "RULE_001_AADHAAR_ADDRESS_UPDATE",
+            "ruleName": "Aadhaar Residential Address Modification Rule",
+            "logic": "IF (Concept == ResidentialAddress) \u2227 (Entity in [Aadhaar, UIDAI] or Text contains 'aadhaar') \u2227 (Intent == UPDATE) THEN Service = AadhaarAddressUpdate"
+          }
+        },
+        {
+          "stepNumber": 5,
+          "title": "Knowledge Graph Inference & Verification",
+          "description": "Traversed Knowledge Graph Path: Query: \"How can I change my house location in Aadhaar?\"  -->  Concept: ResidentialAddress  -->  Service: Aadhaar Address Update  -->  Department: Unique Identification Authority of India (UIDAI). Required verification: 1 supporting document(s) required.",
+          "data": {
+            "path": "Query: \"How can I change my house location in Aadhaar?\"  -->  Concept: ResidentialAddress  -->  Service: Aadhaar Address Update  -->  Department: Unique Identification Authority of India (UIDAI)",
+            "service": "Aadhaar Address Update",
+            "department": "Unique Identification Authority of India (UIDAI)",
+            "documents": [
+              {
+                "uri": "http://gov.semantic.in/document/ProofOfAddress",
+                "name": "Proof of Address (POA)",
+                "description": "Passport, Electricity Bill, Water Bill, Bank Passbook, Registered Rent Agreement, or Post Office Account."
+              }
+            ]
+          }
+        }
+      ],
+      "search_type": "semantic",
+      "success": true,
+      "timestamp": "2026-11-19T15:30:54.035296"
+    }
+  ],
+  "user_feedbacks": [],
+  "chat_sessions": [],
+  "analytics": {
+    "total_searches": 144,
+    "semantic_matches": 136,
+    "unrecognized_queries": 8,
+    "keyword_failures_prevented": 98
+  }
+}

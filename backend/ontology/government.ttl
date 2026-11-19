@@ -1,0 +1,573 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gov: <http://gov.semantic.in/ontology#> .
+@prefix dept: <http://gov.semantic.in/department/> .
+@prefix srv: <http://gov.semantic.in/service/> .
+@prefix doc: <http://gov.semantic.in/document/> .
+@prefix cat: <http://gov.semantic.in/category/> .
+@prefix concept: <http://gov.semantic.in/concept/> .
+
+# --- Ontology Declaration ---
+<http://gov.semantic.in/ontology> a owl:Ontology ;
+    rdfs:label "National Government Service Portal Knowledge Ontology"@en ;
+    rdfs:comment "Formal Web Ontology Language (OWL) knowledge base modeling public government services, departments, citizen eligibility, required documents, and semantic relationships."@en ;
+    owl:versionInfo "2.0.0" .
+
+# ==============================================================================
+# CLASS DEFINITIONS
+# ==============================================================================
+
+gov:GovernmentEntity a owl:Class ;
+    rdfs:label "Government Entity" .
+
+gov:GovernmentDepartment a owl:Class ;
+    rdfs:subClassOf gov:GovernmentEntity ;
+    rdfs:label "Government Department / Ministry" ;
+    rdfs:comment "Administrative public authority or agency providing citizen public services." .
+
+gov:GovernmentService a owl:Class ;
+    rdfs:label "Government Service" ;
+    rdfs:comment "Public administrative service offered to citizens or organizations." .
+
+gov:IdentityService a owl:Class ;
+    rdfs:subClassOf gov:GovernmentService ;
+    rdfs:label "Identity & Civil Registration Service" .
+
+gov:TransportService a owl:Class ;
+    rdfs:subClassOf gov:GovernmentService ;
+    rdfs:label "Transport & Motor Vehicle Service" .
+
+gov:RevenueService a owl:Class ;
+    rdfs:subClassOf gov:GovernmentService ;
+    rdfs:label "Revenue & Certificate Service" .
+
+gov:FinancialService a owl:Class ;
+    rdfs:subClassOf gov:GovernmentService ;
+    rdfs:label "Tax & Financial Service" .
+
+gov:WelfareService a owl:Class ;
+    rdfs:subClassOf gov:GovernmentService ;
+    rdfs:label "Welfare & Civic Service" .
+
+gov:Citizen a owl:Class ;
+    rdfs:label "Citizen" ;
+    rdfs:comment "Beneficiary of government public services." .
+
+gov:RequiredDocument a owl:Class ;
+    rdfs:label "Required Supporting Document" ;
+    rdfs:comment "Documentary evidence mandatory for statutory service completion." .
+
+gov:IdentityDocument a owl:Class ;
+    rdfs:subClassOf gov:RequiredDocument ;
+    rdfs:label "Proof of Identity (POI)" .
+
+gov:AddressDocument a owl:Class ;
+    rdfs:subClassOf gov:RequiredDocument ;
+    rdfs:label "Proof of Address (POA)" .
+
+gov:DateOfBirthDocument a owl:Class ;
+    rdfs:subClassOf gov:RequiredDocument ;
+    rdfs:label "Proof of Date of Birth (PDB)" .
+
+gov:IncomeDocument a owl:Class ;
+    rdfs:subClassOf gov:RequiredDocument ;
+    rdfs:label "Proof of Income" .
+
+gov:Eligibility a owl:Class ;
+    rdfs:label "Service Eligibility Criteria" .
+
+gov:Application a owl:Class ;
+    rdfs:label "Citizen Service Application" .
+
+gov:ServiceCategory a owl:Class ;
+    rdfs:label "Service Domain Category" .
+
+gov:SemanticConcept a owl:Class ;
+    rdfs:label "Semantic Concept" ;
+    rdfs:comment "Vocabulary concept or intent anchor utilized in semantic query reasoning." .
+
+# ==============================================================================
+# OBJECT PROPERTIES
+# ==============================================================================
+
+gov:providesService a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentDepartment ;
+    rdfs:range gov:GovernmentService ;
+    owl:inverseOf gov:belongsToDepartment ;
+    rdfs:label "provides service" .
+
+gov:belongsToDepartment a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:GovernmentDepartment ;
+    owl:inverseOf gov:providesService ;
+    rdfs:label "belongs to department" .
+
+gov:requiresDocument a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:RequiredDocument ;
+    rdfs:label "requires document" .
+
+gov:hasEligibility a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:Eligibility ;
+    rdfs:label "has eligibility criteria" .
+
+gov:hasCategory a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:ServiceCategory ;
+    rdfs:label "categorized under" .
+
+gov:relatedTo a owl:ObjectProperty , owl:SymmetricProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:GovernmentService ;
+    rdfs:label "related to service" .
+
+gov:associatedWithConcept a owl:ObjectProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range gov:SemanticConcept ;
+    rdfs:label "associated with semantic concept" .
+
+gov:mapsToConcept a owl:ObjectProperty ;
+    rdfs:label "maps to canonical concept" .
+
+# ==============================================================================
+# DATA PROPERTIES
+# ==============================================================================
+
+gov:serviceName a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:string .
+
+gov:serviceCode a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:string .
+
+gov:departmentName a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentDepartment ;
+    rdfs:range xsd:string .
+
+gov:ministryName a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentDepartment ;
+    rdfs:range xsd:string .
+
+gov:hasDescription a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+gov:hasApplicationProcedure a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:string .
+
+gov:officialPortalUrl a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:anyURI .
+
+gov:processingTime a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:string .
+
+gov:serviceFee a owl:DatatypeProperty ;
+    rdfs:domain gov:GovernmentService ;
+    rdfs:range xsd:string .
+
+gov:hasSynonym a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+# ==============================================================================
+# DEPARTMENTS (INDIVIDUALS)
+# ==============================================================================
+
+dept:UIDAI a gov:GovernmentDepartment ;
+    gov:departmentName "Unique Identification Authority of India (UIDAI)" ;
+    gov:ministryName "Ministry of Electronics and Information Technology (MeitY)" ;
+    gov:hasDescription "Statutory authority established under the Aadhaar Act 2016 for issuing unique identification numbers to residents." ;
+    gov:officialPortalUrl "https://uidai.gov.in" .
+
+dept:IncomeTax a gov:GovernmentDepartment ;
+    gov:departmentName "Central Board of Direct Taxes (Income Tax Department)" ;
+    gov:ministryName "Ministry of Finance" ;
+    gov:hasDescription "Premier direct tax administration agency governing Permanent Account Number (PAN) issuance and tax governance." ;
+    gov:officialPortalUrl "https://incometax.gov.in" .
+
+dept:PassportSeva a gov:GovernmentDepartment ;
+    gov:departmentName "Consular, Passport & Visa Division (Passport Seva)" ;
+    gov:ministryName "Ministry of External Affairs (MEA)" ;
+    gov:hasDescription "Responsible for issuing Indian Passports, travel credentials, and consular services." ;
+    gov:officialPortalUrl "https://passportindia.gov.in" .
+
+dept:Transport a gov:GovernmentDepartment ;
+    gov:departmentName "Ministry of Road Transport and Highways (MoRTH / Parivahan)" ;
+    gov:ministryName "Ministry of Road Transport and Highways" ;
+    gov:hasDescription "Apex body governing national vehicular administration, Driving Licences (Sarathi), and Vehicle Registrations (Vahan)." ;
+    gov:officialPortalUrl "https://parivahan.gov.in" .
+
+dept:ECI a gov:GovernmentDepartment ;
+    gov:departmentName "Election Commission of India (ECI)" ;
+    gov:ministryName "Autonomous Constitutional Authority" ;
+    gov:hasDescription "Autonomous constitutional authority administering electoral rolls and Voter ID (EPIC) registrations." ;
+    gov:officialPortalUrl "https://voters.eci.gov.in" .
+
+dept:Revenue a gov:GovernmentDepartment ;
+    gov:departmentName "State Department of Revenue & Land Administration (e-District)" ;
+    gov:ministryName "State Governments / Ministry of Home Affairs" ;
+    gov:hasDescription "Responsible for issuing vital civic status certificates including Income, Caste/Community, and Domicile credentials." ;
+    gov:officialPortalUrl "https://edistrict.gov.in" .
+
+dept:PDS a gov:GovernmentDepartment ;
+    gov:departmentName "Department of Food & Public Distribution (PDS / NFSA)" ;
+    gov:ministryName "Ministry of Consumer Affairs, Food & Public Distribution" ;
+    gov:hasDescription "Administers National Food Security Act (NFSA), Targeted Public Distribution System, and Ration Cards." ;
+    gov:officialPortalUrl "https://nfsa.gov.in" .
+
+dept:CRS a gov:GovernmentDepartment ;
+    gov:departmentName "Civil Registration System (Office of the Registrar General of India)" ;
+    gov:ministryName "Ministry of Home Affairs" ;
+    gov:hasDescription "National civil registry administering statutory birth and death registrations." ;
+    gov:officialPortalUrl "https://crsorgi.gov.in" .
+
+# ==============================================================================
+# CATEGORIES (INDIVIDUALS)
+# ==============================================================================
+
+cat:Identity a gov:ServiceCategory ; rdfs:label "Identity Services" .
+cat:Finance a gov:ServiceCategory ; rdfs:label "Financial & Tax Services" .
+cat:Travel a gov:ServiceCategory ; rdfs:label "Travel & Passport Services" .
+cat:Transport a gov:ServiceCategory ; rdfs:label "Transport & Vehicle Services" .
+cat:Electoral a gov:ServiceCategory ; rdfs:label "Civic & Electoral Services" .
+cat:Welfare a gov:ServiceCategory ; rdfs:label "Social Welfare & Subsidy Services" .
+cat:Revenue a gov:ServiceCategory ; rdfs:label "Certificate & Revenue Services" .
+cat:Vital a gov:ServiceCategory ; rdfs:label "Vital Civil Registration" .
+
+# ==============================================================================
+# REQUIRED DOCUMENTS (INDIVIDUALS)
+# ==============================================================================
+
+doc:ProofOfAddress a gov:AddressDocument ;
+    rdfs:label "Proof of Address (POA)" ;
+    gov:hasDescription "Passport, Electricity Bill, Water Bill, Bank Passbook, Registered Rent Agreement, or Post Office Account." .
+
+doc:ProofOfIdentity a gov:IdentityDocument ;
+    rdfs:label "Proof of Identity (POI)" ;
+    gov:hasDescription "Aadhaar Card, Passport, Voter ID Card, PAN Card, Driving Licence, or Government Photo ID." .
+
+doc:ProofOfDOB a gov:DateOfBirthDocument ;
+    rdfs:label "Proof of Date of Birth (PDB)" ;
+    gov:hasDescription "Birth Certificate, 10th Standard Marks Sheet, Passport, or PAN Card." .
+
+doc:IncomeProof a gov:IncomeDocument ;
+    rdfs:label "Income Proof Document" ;
+    gov:hasDescription "Salary Slip, Income Tax Return (ITR), Form 16, or Self-Declaration Affidavit." .
+
+doc:CasteProof a gov:RequiredDocument ;
+    rdfs:label "Paternal Caste Proof Document" ;
+    gov:hasDescription "Father or paternal relative's Community/Caste Certificate or School Leaving Certificate." .
+
+doc:VehicleDocuments a gov:RequiredDocument ;
+    rdfs:label "Vehicle Transfer Set (Form 29 & 30)" ;
+    gov:hasDescription "Original RC, Form 29 & 30 signed by seller and buyer, valid PUC, and Motor Insurance." .
+
+doc:HospitalDischarge a gov:RequiredDocument ;
+    rdfs:label "Institutional Birth Discharge Proof" ;
+    gov:hasDescription "Official discharge summary and birth report slip issued by hospital medical superintendent." .
+
+# ==============================================================================
+# SEMANTIC CONCEPTS (ONTOLOGY TAXONOMY FOR REASONING)
+# ==============================================================================
+
+concept:ResidentialAddress a gov:SemanticConcept ;
+    rdfs:label "Residential Address Concept" ;
+    gov:hasSynonym "house location" , "home location" , "residential location" , "residence" , "house address" , "living place" , "home address" , "flat address" , "shifting house" , "relocation" , "moved to new city" , "pata badalna" .
+
+concept:IdentityCard a gov:SemanticConcept ;
+    rdfs:label "Identity Credential Concept" ;
+    gov:hasSynonym "identity card" , "id card" , "id proof" , "identity proof" , "pehechan patra" , "id document" , "lost id" .
+
+concept:DrivingLicence a gov:SemanticConcept ;
+    rdfs:label "Driving Licence Concept" ;
+    gov:hasSynonym "driving licence" , "driver license" , "driving permit" , "rto licence" , "gaadi chalana licence" , "motor vehicle permit" .
+
+concept:TaxIdentification a gov:SemanticConcept ;
+    rdfs:label "Tax Identifier Concept" ;
+    gov:hasSynonym "pan" , "pan card" , "tax id" , "form 49a" , "income tax number" , "permanent account number" .
+
+concept:ElectoralRegistration a gov:SemanticConcept ;
+    rdfs:label "Voter Registry Concept" ;
+    gov:hasSynonym "voter id" , "voting card" , "epic card" , "election card" , "vote register" , "matdata pehchan patra" .
+
+concept:CasteClassification a gov:SemanticConcept ;
+    rdfs:label "Community & Caste Category Concept" ;
+    gov:hasSynonym "caste certificate" , "community certificate" , "jaati praman patra" , "obc certificate" , "sc st certificate" , "reservation proof" .
+
+concept:IncomeVerification a gov:SemanticConcept ;
+    rdfs:label "Income Status Concept" ;
+    gov:hasSynonym "income certificate" , "aay praman patra" , "salary certificate" , "low income proof" , "annual income proof" .
+
+# ==============================================================================
+# GOVERNMENT SERVICES (INDIVIDUALS WITH FULL TRIPLETS)
+# ==============================================================================
+
+# 1. Aadhaar Address Update (Primary Evaluation Target)
+srv:AadhaarAddressUpdate a gov:IdentityService ;
+    gov:serviceName "Aadhaar Address Update" ;
+    gov:serviceCode "UIDAI-SRV-001" ;
+    gov:belongsToDepartment dept:UIDAI ;
+    gov:hasCategory cat:Identity ;
+    gov:requiresDocument doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:ResidentialAddress ;
+    gov:relatedTo srv:AadhaarNewEnrollment , srv:AadhaarMobileLink ;
+    gov:hasDescription "Update or correct your permanent and present residential address in your Aadhaar profile with supporting documentary evidence." ;
+    gov:hasApplicationProcedure "1. Sign in to myaadhaar.uidai.gov.in using Aadhaar & OTP -> 2. Select 'Update Address in Aadhaar Online' -> 3. Enter new address details -> 4. Upload valid supporting POA document -> 5. Pay Rs 50 -> 6. Track via Service Request Number (SRN)." ;
+    gov:officialPortalUrl "https://myaadhaar.uidai.gov.in" ;
+    gov:processingTime "5 to 10 Business Days" ;
+    gov:serviceFee "Rs 50 (Online Portal)" ;
+    gov:hasSynonym "change house location in aadhaar" , "change address in aadhaar" , "update aadhaar location" , "aadhaar address correction" , "modify home address aadhaar" , "shift home aadhaar" , "new address in aadhar" , "aadhaar me pata badalna" .
+
+# 2. Aadhaar New Enrollment
+srv:AadhaarNewEnrollment a gov:IdentityService ;
+    gov:serviceName "Aadhaar New Enrollment" ;
+    gov:serviceCode "UIDAI-SRV-002" ;
+    gov:belongsToDepartment dept:UIDAI ;
+    gov:hasCategory cat:Identity ;
+    gov:requiresDocument doc:ProofOfIdentity , doc:ProofOfAddress , doc:ProofOfDOB ;
+    gov:associatedWithConcept concept:IdentityCard ;
+    gov:relatedTo srv:AadhaarAddressUpdate ;
+    gov:hasDescription "Fresh enrollment for Indian residents to receive their 12-digit unique biographical and biometric identity." ;
+    gov:hasApplicationProcedure "1. Book appointment at nearest Aadhaar Seva Kendra -> 2. Fill Enrolment Form -> 3. Submit biometric scans (iris, 10 fingerprints, photograph) -> 4. Collect acknowledgement slip with 28-digit Enrolment ID (EID)." ;
+    gov:officialPortalUrl "https://appointments.uidai.gov.in" ;
+    gov:processingTime "15 to 30 Days" ;
+    gov:serviceFee "Free (Government Subsidized)" ;
+    gov:hasSynonym "apply for aadhaar card" , "new aadhaar registration" , "first time aadhaar" , "enroll for aadhaar" , "aadhaar apply" , "get aadhaar" .
+
+# 3. Aadhaar Mobile & Email Link
+srv:AadhaarMobileLink a gov:IdentityService ;
+    gov:serviceName "Aadhaar Mobile & Email Update" ;
+    gov:serviceCode "UIDAI-SRV-003" ;
+    gov:belongsToDepartment dept:UIDAI ;
+    gov:hasCategory cat:Identity ;
+    gov:associatedWithConcept concept:IdentityCard ;
+    gov:relatedTo srv:AadhaarAddressUpdate ;
+    gov:hasDescription "Link or update your valid mobile number and email ID in Aadhaar records to enable OTP-based authentication for digital services." ;
+    gov:hasApplicationProcedure "1. Visit any Aadhaar Seva Kendra or post office CEPT center -> 2. Biometric fingerprint verification -> 3. Operator enters new phone number -> 4. Verify with instant SMS OTP -> 5. Fee Rs 50." ;
+    gov:officialPortalUrl "https://uidai.gov.in" ;
+    gov:processingTime "24 to 72 Hours" ;
+    gov:serviceFee "Rs 50" ;
+    gov:hasSynonym "link phone number to aadhaar" , "change mobile number in aadhaar" , "aadhaar otp phone change" , "update email in aadhaar" .
+
+# 4. PAN Card New Application
+srv:PANCardNewApplication a gov:FinancialService ;
+    gov:serviceName "PAN Card New Application (Form 49A)" ;
+    gov:serviceCode "CBDT-SRV-001" ;
+    gov:belongsToDepartment dept:IncomeTax ;
+    gov:hasCategory cat:Finance ;
+    gov:requiresDocument doc:ProofOfIdentity , doc:ProofOfAddress , doc:ProofOfDOB ;
+    gov:associatedWithConcept concept:TaxIdentification ;
+    gov:relatedTo srv:PANCardCorrection ;
+    gov:hasDescription "Issue of 10-digit alphanumeric Permanent Account Number (PAN) mandatory for taxable entities and financial operations in India." ;
+    gov:hasApplicationProcedure "1. Access Protean NSDL or UTIITSL portal -> 2. Select Form 49A (Indian Citizens) -> 3. Input applicant details -> 4. Instant paperless verification via Aadhaar e-KYC -> 5. Pay fee -> 6. e-PAN issued in 24 hours, physical card dispatched." ;
+    gov:officialPortalUrl "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" ;
+    gov:processingTime "24 Hours (e-PAN) / 10 Days (Physical)" ;
+    gov:serviceFee "Rs 72 (e-PAN) / Rs 107 (Physical Card)" ;
+    gov:hasSynonym "how do i get a pan card" , "apply for new pan card" , "form 49a online" , "income tax card" , "pan card apply" , "get tax id" .
+
+# 5. PAN Card Correction & Reprint
+srv:PANCardCorrection a gov:FinancialService ;
+    gov:serviceName "PAN Card Correction and Reprint" ;
+    gov:serviceCode "CBDT-SRV-002" ;
+    gov:belongsToDepartment dept:IncomeTax ;
+    gov:hasCategory cat:Finance ;
+    gov:requiresDocument doc:ProofOfIdentity , doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:TaxIdentification ;
+    gov:relatedTo srv:PANCardNewApplication ;
+    gov:hasDescription "Correction of misspelled names, father's name, birth dates, or reprinting lost/damaged PAN cards." ;
+    gov:hasApplicationProcedure "1. Open NSDL Changes / Correction application -> 2. Enter 10-digit PAN -> 3. Tick checkboxes for attributes to rectify -> 4. Upload documentary justification -> 5. e-Sign using Aadhaar OTP." ;
+    gov:officialPortalUrl "https://www.onlineservices.nsdl.com" ;
+    gov:processingTime "7 to 14 Business Days" ;
+    gov:serviceFee "Rs 107" ;
+    gov:hasSynonym "lost pan card reprint" , "change name in pan card" , "correct date of birth in pan" , "damaged pan replacement" , "pan card duplicate" .
+
+# 6. Passport Fresh Application
+srv:PassportFreshApplication a gov:TravelService ;
+    gov:serviceName "Passport Fresh Issuance" ;
+    gov:serviceCode "MEA-SRV-001" ;
+    gov:belongsToDepartment dept:PassportSeva ;
+    gov:hasCategory cat:Travel ;
+    gov:requiresDocument doc:ProofOfAddress , doc:ProofOfDOB ;
+    gov:associatedWithConcept concept:IdentityCard ;
+    gov:relatedTo srv:PassportRenewalReissue ;
+    gov:hasDescription "Official government credential granting permission for international border crossing and travel to sovereign states." ;
+    gov:hasApplicationProcedure "1. Register on Passport Seva Portal -> 2. Complete online application -> 3. Pay fee and book PSK appointment -> 4. Present original documents & biometrics at PSK -> 5. Local police physical verification -> 6. Dispatched via Speed Post." ;
+    gov:officialPortalUrl "https://www.passportindia.gov.in" ;
+    gov:processingTime "7 to 21 Days (Normal) / 3 Days (Tatkaal)" ;
+    gov:serviceFee "Rs 1,500 (36 pages) / Rs 2,000 (60 pages)" ;
+    gov:hasSynonym "apply for new passport" , "get indian passport" , "fresh passport application" , "international travel card" , "passport apply" .
+
+# 7. Passport Renewal / Reissue
+srv:PassportRenewalReissue a gov:TravelService ;
+    gov:serviceName "Passport Renewal and Re-issue" ;
+    gov:serviceCode "MEA-SRV-002" ;
+    gov:belongsToDepartment dept:PassportSeva ;
+    gov:hasCategory cat:Travel ;
+    gov:requiresDocument doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:IdentityCard ;
+    gov:relatedTo srv:PassportFreshApplication ;
+    gov:hasDescription "Re-issue of Indian passport due to validity expiration, exhaustion of visa stamp pages, or change in personal particulars." ;
+    gov:hasApplicationProcedure "1. Sign in to Passport Seva Portal -> 2. Apply for 'Re-issue of Passport' -> 3. Enter old passport number and expiry -> 4. Schedule appointment at nearest PSK -> 5. Submit old booklet for cancellation." ;
+    gov:officialPortalUrl "https://www.passportindia.gov.in" ;
+    gov:processingTime "7 to 14 Business Days" ;
+    gov:serviceFee "Rs 1,500" ;
+    gov:hasSynonym "renew passport" , "expired passport renewal" , "passport re-issue" , "passport booklet extension" , "passport pages over" .
+
+# 8. Driving Licence Learner Application
+srv:DrivingLicenceLearner a gov:TransportService ;
+    gov:serviceName "Learner's Licence (LL) Application" ;
+    gov:serviceCode "MORTH-SRV-001" ;
+    gov:belongsToDepartment dept:Transport ;
+    gov:hasCategory cat:Transport ;
+    gov:requiresDocument doc:ProofOfAddress , doc:ProofOfDOB ;
+    gov:associatedWithConcept concept:DrivingLicence ;
+    gov:relatedTo srv:DrivingLicencePermanent ;
+    gov:hasDescription "Provisional permit enabling citizens to learn motor vehicle driving on Indian roads under instructor supervision." ;
+    gov:hasApplicationProcedure "1. Go to sarathi.parivahan.gov.in -> 2. Select state -> 3. Apply for Learner Licence -> 4. Authenticate with Aadhaar -> 5. Take online traffic signal test -> 6. Download instant computer-generated LL." ;
+    gov:officialPortalUrl "https://sarathi.parivahan.gov.in" ;
+    gov:processingTime "Instant (Online Aadhaar Test)" ;
+    gov:serviceFee "Rs 200" ;
+    gov:hasSynonym "apply learner licence" , "learning licence online" , "parivahan learner test" , "first driving licence" , "two wheeler learner license" .
+
+# 9. Driving Licence Permanent
+srv:DrivingLicencePermanent a gov:TransportService ;
+    gov:serviceName "Permanent Driving Licence (DL)" ;
+    gov:serviceCode "MORTH-SRV-002" ;
+    gov:belongsToDepartment dept:Transport ;
+    gov:hasCategory cat:Transport ;
+    gov:associatedWithConcept concept:DrivingLicence ;
+    gov:relatedTo srv:DrivingLicenceLearner , srv:DrivingLicenceRenewal ;
+    gov:hasDescription "Full legal authorization smart card granting permission to drive motor vehicles across India." ;
+    gov:hasApplicationProcedure "1. Visit sarathi.parivahan.gov.in after 30 days of holding valid LL -> 2. Enter LL number -> 3. Book practical driving track test slot -> 4. Clear physical driving test before Motor Vehicle Inspector -> 5. Card delivered." ;
+    gov:officialPortalUrl "https://sarathi.parivahan.gov.in" ;
+    gov:processingTime "7 to 15 Days after test" ;
+    gov:serviceFee "Rs 200 + Rs 200 Smart Card Fee" ;
+    gov:hasSynonym "permanent driving licence" , "driving test slot" , "convert learner to dl" , "apply dl" , "four wheeler licence" .
+
+# 10. Driving Licence Renewal
+srv:DrivingLicenceRenewal a gov:TransportService ;
+    gov:serviceName "Driving Licence Renewal" ;
+    gov:serviceCode "MORTH-SRV-003" ;
+    gov:belongsToDepartment dept:Transport ;
+    gov:hasCategory cat:Transport ;
+    gov:requiresDocument doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:DrivingLicence ;
+    gov:relatedTo srv:DrivingLicencePermanent ;
+    gov:hasDescription "Extension of driving licence validity period upon expiry of 20-year term or attainment of age 40." ;
+    gov:hasApplicationProcedure "1. Visit Sarathi Portal -> 2. Select 'Services on DL' -> 3. Input DL Number and DOB -> 4. Select Renewal -> 5. Upload medical certificate Form 1-A if applicant age > 40 -> 6. Pay fee online -> 7. Endorsement approved." ;
+    gov:officialPortalUrl "https://sarathi.parivahan.gov.in" ;
+    gov:processingTime "5 to 10 Business Days" ;
+    gov:serviceFee "Rs 400" ;
+    gov:hasSynonym "where can i renew my driving licence" , "renew my driving license" , "expired dl renewal" , "extend driving licence" , "parivahan dl renewal" .
+
+# 11. Vehicle Registration Certificate Transfer
+srv:VehicleRegistrationTransfer a gov:TransportService ;
+    gov:serviceName "Vehicle Registration Transfer (RC Transfer)" ;
+    gov:serviceCode "MORTH-SRV-004" ;
+    gov:belongsToDepartment dept:Transport ;
+    gov:hasCategory cat:Transport ;
+    gov:requiresDocument doc:VehicleDocuments ;
+    gov:hasDescription "Transfer of vehicular ownership upon sale, purchase, or inheritance of two-wheelers and four-wheelers." ;
+    gov:hasApplicationProcedure "1. Log in to vahan.parivahan.gov.in -> 2. Enter vehicle registration number -> 3. Select 'Transfer of Ownership' -> 4. Buyer and seller Aadhaar OTP consent -> 5. Submit physical signed Form 29/30 to jurisdictional RTO." ;
+    gov:officialPortalUrl "https://vahan.parivahan.gov.in" ;
+    gov:processingTime "15 to 30 Days" ;
+    gov:serviceFee "Rs 300 to Rs 500 depending on vehicle class" ;
+    gov:hasSynonym "transfer rc of bike" , "car rc ownership change" , "sell vehicle rc transfer" , "vahan rc name transfer" , "used car registration transfer" .
+
+# 12. Voter ID New Registration
+srv:VoterIDNewRegistration a gov:WelfareService ;
+    gov:serviceName "Voter ID New Registration (Form 6)" ;
+    gov:serviceCode "ECI-SRV-001" ;
+    gov:belongsToDepartment dept:ECI ;
+    gov:hasCategory cat:Electoral ;
+    gov:requiresDocument doc:ProofOfAddress , doc:ProofOfDOB ;
+    gov:associatedWithConcept concept:ElectoralRegistration ;
+    gov:relatedTo srv:VoterIDAddressCorrection ;
+    gov:hasDescription "Enrollment of first-time Indian citizens reaching age 18 into the statutory electoral roll with an Electronic Photo Identity Card (EPIC)." ;
+    gov:hasApplicationProcedure "1. Access voters.eci.gov.in -> 2. Fill Form 6 -> 3. Upload passport photo, age proof, and address proof -> 4. Booth Level Officer (BLO) performs field verification -> 5. Download e-EPIC and receive physical card." ;
+    gov:officialPortalUrl "https://voters.eci.gov.in" ;
+    gov:processingTime "15 to 30 Business Days" ;
+    gov:serviceFee "Free of Cost" ;
+    gov:hasSynonym "apply for new voter id" , "form 6 online" , "first time voter registration" , "get election card" , "epic card apply" .
+
+# 13. Voter ID Address Correction (Form 8)
+srv:VoterIDAddressCorrection a gov:WelfareService ;
+    gov:serviceName "Voter ID Address Change and Shifting (Form 8)" ;
+    gov:serviceCode "ECI-SRV-002" ;
+    gov:belongsToDepartment dept:ECI ;
+    gov:hasCategory cat:Electoral ;
+    gov:requiresDocument doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:ResidentialAddress , concept:ElectoralRegistration ;
+    gov:relatedTo srv:VoterIDNewRegistration ;
+    gov:hasDescription "Shifting of constituency or residence address in electoral records and correction of biographical particulars in Voter ID." ;
+    gov:hasApplicationProcedure "1. Open voters.eci.gov.in -> 2. Select Form 8 -> 3. Enter current EPIC number -> 4. Select 'Shifting of Residence' -> 5. Enter new constituency and house address -> 6. Submit proof -> 7. BLO verification." ;
+    gov:officialPortalUrl "https://voters.eci.gov.in" ;
+    gov:processingTime "14 to 28 Days" ;
+    gov:serviceFee "Free of Cost" ;
+    gov:hasSynonym "change address in voter card" , "shift voter id constituency" , "form 8 online" , "update residence in epic" , "voter card correction" .
+
+# 14. Ration Card Application
+srv:RationCardApplication a gov:WelfareService ;
+    gov:serviceName "Ration Card Application (NFSA)" ;
+    gov:serviceCode "PDS-SRV-001" ;
+    gov:belongsToDepartment dept:PDS ;
+    gov:hasCategory cat:Welfare ;
+    gov:requiresDocument doc:ProofOfAddress , doc:IncomeProof ;
+    gov:hasDescription "Public food security card entitling beneficiary families to subsidized food grains and civil supplies under NFSA." ;
+    gov:hasApplicationProcedure "1. Visit state food & civil supplies portal -> 2. Apply for new Ration Card -> 3. Provide Aadhaar IDs of all family members -> 4. Submit income certificate -> 5. Food Inspector inspects premises -> 6. Card sanctioned." ;
+    gov:officialPortalUrl "https://nfsa.gov.in" ;
+    gov:processingTime "20 to 30 Business Days" ;
+    gov:serviceFee "Rs 20 to Rs 50" ;
+    gov:hasSynonym "apply for ration card" , "bpl card apply" , "food security card" , "new rashan card" , "pds card online" .
+
+# 15. Income Certificate
+srv:IncomeCertificate a gov:RevenueService ;
+    gov:serviceName "Income Certificate (e-District)" ;
+    gov:serviceCode "REV-SRV-001" ;
+    gov:belongsToDepartment dept:Revenue ;
+    gov:hasCategory cat:Revenue ;
+    gov:requiresDocument doc:IncomeProof , doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:IncomeVerification ;
+    gov:relatedTo srv:CommunityCasteCertificate ;
+    gov:hasDescription "Statutory revenue certificate certifying total annual family income from all legitimate sources for scholarships and reservations." ;
+    gov:hasApplicationProcedure "1. Visit state e-District portal -> 2. Choose 'Revenue Services' -> 'Income Certificate' -> 3. Declare family income sources -> 4. Upload salary slip or income affidavit -> 5. Verification by VAO and Tehsildar -> 6. Download digitally signed PDF." ;
+    gov:officialPortalUrl "https://edistrict.gov.in" ;
+    gov:processingTime "7 to 15 Days" ;
+    gov:serviceFee "Rs 30 to Rs 60" ;
+    gov:hasSynonym "how to get income certificate" , "apply aay praman patra" , "revenue income proof" , "annual income certificate" , "tahsildar income cert" .
+
+# 16. Community / Caste Certificate
+srv:CommunityCasteCertificate a gov:RevenueService ;
+    gov:serviceName "Community and Caste Certificate" ;
+    gov:serviceCode "REV-SRV-002" ;
+    gov:belongsToDepartment dept:Revenue ;
+    gov:hasCategory cat:Revenue ;
+    gov:requiresDocument doc:CasteProof , doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:CasteClassification ;
+    gov:relatedTo srv:IncomeCertificate ;
+    gov:hasDescription "Official statutory certification of citizen's belonging to Scheduled Caste (SC), Scheduled Tribe (ST), OBC, or EWS category." ;
+    gov:hasApplicationProcedure "1. Log into e-District portal -> 2. Select Caste/Community Certificate -> 3. Provide paternal lineage community records -> 4. Local Revenue Inspector enquiry -> 5. Sub-Divisional Magistrate / Tehsildar signs credential." ;
+    gov:officialPortalUrl "https://edistrict.gov.in" ;
+    gov:processingTime "15 to 30 Days" ;
+    gov:serviceFee "Rs 50" ;
+    gov:hasSynonym "how can i apply for a caste certificate" , "community certificate apply" , "obc certificate" , "sc st certificate online" , "jaati praman patra" .
+
+# 17. Birth Certificate Registration
+srv:BirthCertificateRegistration a gov:IdentityService ;
+    gov:serviceName "Birth Certificate Registration" ;
+    gov:serviceCode "CRS-SRV-001" ;
+    gov:belongsToDepartment dept:CRS ;
+    gov:hasCategory cat:Vital ;
+    gov:requiresDocument doc:HospitalDischarge , doc:ProofOfAddress ;
+    gov:associatedWithConcept concept:IdentityCard ;
+    gov:hasDescription "Statutory legal registration of child birth under Registration of Births and Deaths Act establishing legal existence." ;
+    gov:hasApplicationProcedure "1. Hospital reports birth event to registrar or parent applies on crsorgi.gov.in -> 2. Verify parental identity -> 3. Municipal Registrar approves -> 4. Digitally verifiable QR code certificate generated." ;
+    gov:officialPortalUrl "https://crsorgi.gov.in" ;
+    gov:processingTime "7 to 14 Days" ;
+    gov:serviceFee "Free within 21 days (Late fee applicable thereafter)" ;
+    gov:hasSynonym "apply birth certificate" , "janam praman patra" , "register new child birth" , "download municipal birth certificate" .
